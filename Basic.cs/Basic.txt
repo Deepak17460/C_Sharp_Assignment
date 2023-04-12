@@ -1,0 +1,28 @@
+class Baisc{
+     public class Query<T>{
+         public List<T>queue;
+         public Query(){
+             queue=new List<T>();
+         }     
+     }
+    public static void Main(String[] args){
+        // Size of the Arrays
+        int n=int.Parse(Console.ReadLine());
+        // exceptional Handling
+        // if(n==0){
+        //     throw new Exception(" Array is Empty");
+        // }else{
+        // int[] Arrays=new int[n];
+        // }
+        int[] Array = new int[n];
+        for(int i=0;i<n;i++){
+            Array[i]=int.Parse(Console.ReadLine());
+        }
+        //Basic obj=new Basic();
+        //queue=obj.Query();
+        List<int> OddNumber=Array.Where(n => n%2==0).ToList();
+        foreach(var ele in OddNumber){
+            Console.Write($"{ele} ");
+        }
+    }
+}
