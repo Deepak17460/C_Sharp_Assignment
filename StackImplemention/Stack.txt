@@ -1,0 +1,77 @@
+using System;
+using System.linq;
+using System.Collections.Generic;
+
+
+namespace StackImplemention{
+    
+    //Generic way to create stack using List
+      public class Stack<T>
+      {
+          private List<T>stack;
+          public  Stack(){
+               // Creating queue using List
+             stack=new List<T>();
+          }
+          public void Push(T ele){
+                stack.push(ele);
+          }
+          public T Pop(){
+                   if(stack.Count==0){
+              throw new Exception("stack is empty");
+            }
+            dynamic TopEle;
+            TopEle=stack[stack.Count-1];
+            stack.Remove(TopEle);
+            return TopEle;
+          }
+          public T Centre(){
+                   if(stack.Count==0){
+              throw new Exception("stack is empty");
+            }
+            return stack[stack.Count>>1];
+          }
+          public void Sort(){
+          stack.Sort();
+          }        
+          public void Reverse(){
+          stack.Reverse();
+          }
+          public T Contains(T ele){
+                       if(stack.Count==0){
+              throw new Exception("stack is empty");
+            }
+            return stack.Contains(ele);
+          }
+          public void Iterator(){
+                       if(stack.Count==0){
+              throw new Exception("stack is empty");
+            }
+            for(int i=0;i<stack.Size();i++){
+            Console.Write(&{stack[i]});
+            }
+            Console.WriteLine();
+          }
+          public int Size(){
+          return stack.Size();
+          }
+          public T Peek(){
+                      if(stack.Count==0){
+              throw new Exception("stack is empty");
+            }
+            return stacl[^1];
+          }
+          public void Traverse(){
+                         if(stack.Count==0){
+              throw new Exception("stack is empty");
+            }
+            for(inti=0;i<stack.Size();i++){
+            Console.Write($"stack[i]");
+            }
+            foreach(T ele in stack){
+            Console.Write($"{ele}");
+            }
+            Console.WriteLine();
+          }
+      }
+}

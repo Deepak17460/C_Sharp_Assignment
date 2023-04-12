@@ -1,0 +1,91 @@
+using System;
+using System.Collection.Generic;
+
+
+
+
+namespace QueueImplemention{
+    // Creating the queue using generic way
+    public class Queue<T>
+    {
+         //Using List we are creating the Queue
+         private List<T> queue;
+         public Queue(){
+             //Creating the Queue using List
+             queue=new List<T>();
+         }
+         // Enequeue the elements
+         public void Enqueue( T Ele){
+               queue.Add(Ele);
+         }
+         // Dequeue the Element
+         public T Dequeue(){
+         // Handling the exceptinal
+         if(queue.Count==0){
+         throw new Exception("Okk");
+         }
+             // Using Dynamic KeyWord
+             dynamic FrontEle;
+             FrontEle=queue[0];
+             queue.Remove(FrontEle);
+             return FrontEle;
+             
+         }
+         // Sorting
+         public void Sort(){
+              queue.Sort();
+         }
+         // Reversing
+         public void Reverse(){
+              queue.Reverse();
+         }
+         public int Size(){
+             // Finding the Size of Queue
+             return queue.Size();
+         }
+         //Conating the element
+         public bool Contains(T ele){
+              if(queue.Count==0){
+         throw new Exception("Okk");
+         }
+         return queue.Contains(ele);
+         }
+         // Centre
+         public T Centre(){
+          if(queue.Count==0){
+            throw new Exception("Okk");
+         }
+         return queue[queue.Count/2];
+         }
+         public void Iterator(){
+                if(queue.Count==0){
+         throw new Exception("Okk");
+         }
+         for(int i=0;i<queue.Size();i++){
+         Console.Write($"queue[i]");
+         }
+         Console.Writeline();
+         }
+         public void Traverse()
+        {
+            if (queue.Count == 0) 
+                throw new Exception("Oops Queue is Empty!\n");
+            Console.WriteLine();
+            // Using Loop here
+            foreach (T Ele in queue)
+            {
+                Console.Write($"{Ele}  ");
+            }
+            Console.WriteLine();
+        }
+        //Method to get the Front Element of the Queue
+        public T Peek()
+        {
+            if (queue.Count == 0) 
+                // Exceptional Handling
+                throw new Exception("Oops Queue is Empty Thus No Any Element is Present at the front!!\n");
+            return queue[0];
+        }
+    }
+    
+}
